@@ -1,0 +1,19 @@
+{% extends "paginas/base.html" %}
+{% block titulo %} Agregar nueva venta {% endblock %}
+{% block contenido %}
+
+    <div class="card">
+        <div class="card-header">
+            Crear una nueva Venta
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Datos de la venta</h4>
+            {% include 'ventas/form.html' %}
+        </div>
+        <div class="card-footer text-muted">
+            
+        </div>
+    </div>
+
+
+{% endblock %}
