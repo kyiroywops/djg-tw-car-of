@@ -15,6 +15,12 @@ def autos(request):
     autos = Auto.objects.all()
     return render(request, "autos/index.html", {"autos": autos})
 
+def login(request):
+    return render(request, "paginas/login.html")
+
+def signup(request):
+    return render(request, "paginas/signup.html")  
+
 def crear(request):
     formulario = AutoForm(request.POST or None, request.FILES or None)
     if formulario.is_valid():
@@ -57,3 +63,5 @@ def eliminarVentas(request, id):
     ventas = Ventas.objects.get(id=id)
     ventas.delete()
     return redirect("ventas")
+
+
