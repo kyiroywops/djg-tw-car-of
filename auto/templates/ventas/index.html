@@ -1,15 +1,13 @@
 {% extends "paginas/base.html" %}
 
-{% block titulo %} Lista de autos {% endblock %}
+{% block titulo %} Vehículos vendidos {% endblock %}
 
 {% block contenido %}
 
 <div class="card">
-    <div class="card-header">
-        <a name="" id="" class="btn btn-dark" href="{% url 'crear' %}" role="button">Agregar un nuevo auto</a>
-    </div>
+  
     <div class="card-body">
-        <h4 class="card-title">Autos disponibles</h4>
+        <h4 class="card-title">Vehículos vendidos</h4>
 
         <table class="table table-striped">
             <thead>
@@ -19,9 +17,9 @@
                     <th>ID</th>
                     <th>Modelo</th>
                     <th>Imagen</th>
-                    <th>Categoria</th>
-                    <th>Marca</th>
-                    <th>Año</th>
+                    <th>Rut Cliente</th>
+                    <th>Rut Vendedor</th>
+                    <th>Fecha Venta</th>
                     <th>Valor</th>
                     <th>Acciones</th>
                 </tr>

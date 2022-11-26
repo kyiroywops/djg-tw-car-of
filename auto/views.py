@@ -8,8 +8,8 @@ from .forms import AutoForm
 def inicio(request):
     return render(request, "paginas/inicio.html")
 
-def nosotros(request):
-    return render(request, "paginas/nosotros.html")
+def comision(request):
+    return render(request, "paginas/comision.html")
 
 def autos(request):
     autos = Auto.objects.all()
@@ -34,3 +34,6 @@ def eliminar(request, id):
     auto = Auto.objects.get(id=id)
     auto.delete()
     return redirect("autos")
+
+def ventas (request):
+    return render(request, "ventas/index.html")
