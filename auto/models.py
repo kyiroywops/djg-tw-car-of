@@ -6,11 +6,11 @@ class Auto(models.Model):
     id = models.AutoField(primary_key=True)
     marca = models.CharField(max_length=50, verbose_name='Marca')
     imagen = models.ImageField(upload_to="imagenes/", null=True, verbose_name='Imagen')
-    modelo = models.Charfield(max_length=50, verbose_name='Modelo')
+    modelo = models.CharField(max_length=50, verbose_name='Modelo')
     valor = models.IntegerField(verbose_name='Valor')
     fabricacion = models.IntegerField(verbose_name='Año')
-    disponibilidad = models.Charfield(max_length=20, verbose_name='Disponibilidad')
-    categoria = models.Charfield(max_length=20, verbose_name='Categoria')
+    disponibilidad = models.CharField(max_length=20, verbose_name='Disponibilidad')
+    categoria = models.CharField(max_length=20, verbose_name='Categoria')
 
     def __str__(self):
         fila = "Marca: " + self.marca + " Modelo: " + self.modelo + " Valor: " + self.valor + " Año: " + self.fabricacion + " Disponibilidad: " + self.disponibilidad + " Categoria: " + self.categoria
