@@ -1,7 +1,7 @@
 from django import forms
-from .models import Libro
+from .models import Auto
 
-class LibroForm(forms.ModelForm):
+class AutoForm(forms.ModelForm):
     class Meta:
-        model = Libro
+        model = Auto
         fields = '__all__'
