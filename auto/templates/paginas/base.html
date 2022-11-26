@@ -18,23 +18,38 @@
 <body>
   <head>
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-      <a class="navbar-brand" href="/">Finecars</a>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark p-3">
+      <a class="navbar-brand mr p-3" href="/">Finecars</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'inicio' %}">Inicio </a>
-        </ul>
-        <div class="navbar-nav ">
-          <a class="nav-link" href="{% url 'autos' %}">Ver autos</a>
-        </div> 
-        <div class="navbar-nav  ">
-          <a class="nav-link" href="{% url 'nosotros'  %}">Nosotros</a>
-        </div>  
+      <div class="mx-auto">
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'inicio' %}">Inicio </a>
+          </ul>
+          <div class="navbar-nav ">
+            <a class="nav-link" href="{% url 'autos' %}">Visualización de autos</a>
+          </div> 
+          <div class="navbar-nav ">
+            <a class="nav-link" href="{% url 'autos' %}">Agregar autos</a>
+          </div> 
+          <div class="navbar-nav ">
+            <a class="nav-link" href="{% url 'autos' %}">Ventas</a>
+          </div> 
+          <div class="navbar-nav  ">
+            <a class="nav-link" href="{% url 'nosotros'  %}">Calcular comisión</a>
+          </div>  
+        </div>
+
       </div>
+        <span>
+          
+          <div class="navbar-nav my-2">
+            <button type="button" href="{% url 'inicio' %}" class="btn btn-outline-info">Cerrar Sesion</button>
+          </div>
+        </span>
     </nav>
   </head>
   <main>
