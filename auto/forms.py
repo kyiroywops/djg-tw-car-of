@@ -26,3 +26,8 @@ class VentasForm(forms.ModelForm):
     class Meta:
         model = Ventas
         fields = '__all__'
+
+class VendedoresForm(forms.ModelForm):
+    class Meta:
+        model = Vendedores
+        fields = '__all__'

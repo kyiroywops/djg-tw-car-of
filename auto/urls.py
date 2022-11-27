@@ -20,4 +20,7 @@ urlpatterns = [
     path('login', views.login, name="login"),
     path('signup', views.signup, name="signup"),
     path('crearVendedor', views.crearVendedor, name="crearVendedor"),
+    path('inicioUser', views.inicioUser, name="inicioUser"),
+    path('miscomprasUser', views.miscomprasUser, name="miscomprasUser"),
+    path('misdatosUser', views.misdatosUser, name="misdatosUser"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

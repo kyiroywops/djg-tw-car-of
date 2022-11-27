@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Auto, Ventas, Compradores, Vendedores, Detalles
 from django.http import HttpResponse
-from .forms import AutoForm, VentasForm
+from .forms import AutoForm, VentasForm, VendedoresForm
 
 # Create your views here.
 
@@ -21,6 +21,15 @@ def login(request):
 def signup(request):
     return render(request, "paginas/signup.html")  
 
+def inicioUser(request):
+    return render(request, "paginas/inicioUser.html")
+
+def miscomprasUser(request):
+    return render(request, "paginas/miscomprasUser.html")
+
+def misdatosUser(request):
+    return render(request, "paginas/misdatosUser.html")
+
 def crear(request):
     formulario = AutoForm(request.POST or None, request.FILES or None)
     if formulario.is_valid():
@@ -29,7 +38,11 @@ def crear(request):
     return render(request, "autos/crear.html", {"formulario": formulario})
 
 def crearVendedor(request):
-    return render(request, "paginas/crearVendedor.html")
+    formulario = VendedoresForm(request.POST or None)
+    if formulario.is_valid():
+        formulario.save()
+        return redirect("signup")
+    return render(request, "paginas/crearVendedor.html", {"formulario": formulario})
 
 def editar(request, id):
     auto = Auto.objects.get(id=id)

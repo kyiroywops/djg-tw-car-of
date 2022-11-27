@@ -1,5 +1,42 @@
 {% extends "paginas/base.html" %}
-{% block titulo %} Crear Vendedor {% endblock %}
+{% block titulo %} Agregar un nuevo vendedor {% endblock %}
 {% block contenido %}
-    Crear Vendedor
+
+    <div class="card">
+        <div class="card-header">
+            Crear un Vendedor
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Datos del vendedor</h4>
+            <form enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                {% for campo in formulario %}
+                  <div class="mb-3">
+                    <label for="" class="form-label">{{campo.label}}</label>
+              
+                    {% if campo.field.widget.input_type == 'file' and campo.value %}
+                    <br>
+                    <img src="{{MEDIA_URL}}/imagenes/{{campo.value}}" alt="" width="100px" />
+                    {% endif %}
+              
+                    
+              
+              
+                    <input type={{ campo.field.widget.input_type }} 
+                      class="form-control" name="{{ campo.name }}" id="" aria-describedby="helpId" placeholder="{{ campo.label }}" value="{{ campo.value | default:'' }}"> 
+                  </div>
+                  <div class="col-12 help-text">{{campo.errors}}</div>
+                {% endfor %}
+              
+                <input name="" id="" class="btn btn-dark" type="submit" value="Enviar información">
+                  <a name="" id="" class="btn btn-danger" href="{% url 'autos' %}" role="button">Cancelar</a>
+              
+              </form>
+        </div>
+        <div class="card-footer text-muted">
+            
+        </div>
+    </div>
+
+
 {% endblock %}

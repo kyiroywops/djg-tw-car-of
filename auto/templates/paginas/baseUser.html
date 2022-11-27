@@ -19,7 +19,7 @@
   <head>
     
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark p-3">
-      <a class="navbar-brand mr p-3" href="/">Finecars</a>
+      <a class="navbar-brand mr p-3" href="{% url 'inicioUser' %}">Finecars</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -27,13 +27,13 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'inicio' %}">Inicio </a>
+              <a class="nav-link" href="{% url 'inicioUser' %}">Inicio </a>
           </ul>
           <div class="navbar-nav ">
-            <a class="nav-link" href="{% url 'autos' %}">Mis datos</a>
+            <a class="nav-link" href="{% url 'misdatosUser' %}">Mis datos</a>
           </div> 
           <div class="navbar-nav ">
-            <a class="nav-link" href="{% url 'crear' %}">Mis compras</a>
+            <a class="nav-link" href="{% url 'miscomprasUser' %}">Mis compras</a>
           </div> 
    
         </div>
