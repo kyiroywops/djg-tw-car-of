@@ -28,6 +28,9 @@ def crear(request):
         return redirect("autos")
     return render(request, "autos/crear.html", {"formulario": formulario})
 
+def crearVendedor(request):
+    return render(request, "paginas/crearVendedor.html")
+
 def editar(request, id):
     auto = Auto.objects.get(id=id)
     formulario = AutoForm(request.POST or None, request.FILES or None, instance=auto)

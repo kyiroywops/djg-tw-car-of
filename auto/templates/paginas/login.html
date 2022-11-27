@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-  <title>{% block titulo %}  {% endblock %}</title>
+  <title>Inicio de sesión</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -36,6 +36,7 @@
     </nav>
   </head>
   <main>
+    {% block content%}
     <div class="login-form mx-auto p-5 mx-7">
         <h1 class="text-center font-weight-bold">Bienvenido a fine cars!</h1>
         <form method="POST" class="p-5">
@@ -53,12 +54,14 @@
               <input type="checkbox" class="form-check-input" name="vendedor">
               <label class="form-check-label">Soy un vendedor</label>
             </div>
+            <a name="" id="" class="btn btn-info" href="{% url 'signup' %}" role="button">Registrarme</a>
             <button type="submit" class="btn btn-dark my-3">Ingresar</button>
-          </form>
 
+        </form>
+        
     </div>
 
-   
+   {% endblock %}
     
   </main>
   <footer>
